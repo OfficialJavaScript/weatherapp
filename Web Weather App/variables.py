@@ -1,0 +1,11 @@
+town_name = ""
+country_name = ""
+desc = ""
+temp = ""
+max_temp = ""
+min_temp = ""
+humid = ""
+wind_speed = ""
+country = ""
+api_key_error = False
+error = False
