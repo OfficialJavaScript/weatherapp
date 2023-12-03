@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter API Key | Weather</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter API Key</h1>
+    <p class="output_text">You can get an API Key from <a target="_blank" href="https://openweathermap.org/">OpenWeatherMap</a></p>
+    <form class="center" method="post" action="/add_api_key">
+        <input class="citytext" type="text" name="api_key" placeholder="Enter your API Key">
+        <input class="cityenter" type="submit" value="Enter">
+    </form>
+    {% if api_key_error==True %}
+        <div class="output_div">
+            <p class="output_text">That is not a valid API key</p>
+        </div>
+    {% endif %}
+</body>
+</html>

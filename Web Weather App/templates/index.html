@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Weather</h1>
+    <form class="center" method="post" action="/ask_weather">
+        <input class="citytext" type="text" name="town_name" placeholder="Enter city name">
+        <input class="cityenter" type="submit" value="Enter">
+    </form>
+    {% if error==True %}
+        <div class="output_div">
+            <p class="output_text">That is not a valid city.</p>
+        </div>
+    {% elif country %}
+        <div class="output_div">
+            <p class="output_text">The weather in {{ town_name }}, {{ country_name }}, is {{ desc }}, the current temp is {{ temp }}&deg;C, the maximum temp will is {{ max_temp }}&deg;C, and minimum temp is {{ min_temp }}&deg;C.</p>
+            <p class="output_text">The current humidity is {{ humid }}%. The current wind speed is {{ wind_speed }}km/h</p>
+        </div>
+    {% endif %}
+    {% if desc.lower() == "cloudy" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/cloud.png') }}">
+    {% elif desc.lower() == "sunny" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/sun.png') }}">
+    {% elif desc.lower() == "clear" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/sun.png') }}">
+    {% elif desc.lower() == "snowing" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/snow.png') }}">
+    {% elif desc.lower() == "in a thunderstorm" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/thunderstorm.png') }}">
+    {% elif desc.lower() == "windy" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/wind.png') }}">
+    {% elif desc.lower() == "rainy" and error!=True %}
+        <img class="weatherimage" height="100px" src="{{ url_for('static', filename='media/rain.png') }}">
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Ubuntu&display=swap');
+
+html {
+    background-color: teal;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0px;
+    font-family: 'Roleway', sans-serif;
+}
+
+.center { 
+    text-align: center;
+}
+
+.citytext {
+    background-color: aqua;
+    height: 50px;
+    width: 500px;
+    font-size: 40px;
+    
+}
+
+.cityenter {
+    background-color: aqua;
+    height: 50px;
+    width: 150px;
+    font-size: 40px;
+}
+
+form {
+    display: block;
+}
+
+.output_text {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.output_div {
+    background-color: cornflowerblue;
+    margin-right: 300px;
+    margin-left: 300px;
+}
+
+.weatherimage {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 200px;
+}
